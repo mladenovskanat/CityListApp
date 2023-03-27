@@ -17,9 +17,6 @@ Prerequisites
 
 ## FE ##
 
-Prerequisites
-* Install Node.js
-
 ### Running the application locally ###
 
 * Navigate to CityList-FE

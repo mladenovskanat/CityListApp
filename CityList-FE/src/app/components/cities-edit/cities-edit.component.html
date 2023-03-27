@@ -1,0 +1,7 @@
+<div [formGroup]="city">
+  <input type="text" placeholder="Type city's name..." formControlName="name">
+  <input type="text" size="100" placeholder="Type city's photo..." formControlName="photo">
+  <button (click)="edit()">Save</button>
+</div>
+<img src="{{img}}"/>
+

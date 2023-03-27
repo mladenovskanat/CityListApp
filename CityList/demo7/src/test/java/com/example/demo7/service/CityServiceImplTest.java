@@ -49,6 +49,7 @@ class CityServiceImplTest {
         when(cityRepository.findById(anyLong())).thenReturn(Optional.ofNullable(city));
         when(cityRepository.save(any(City.class))).thenReturn(city);
         when(cityMapper.cityToCityDTO(any(City.class))).thenReturn(cityDTO);
+        when(cityMapper.cityUpdateRequestDTOToCity(any(CityUpdateRequestDTO.class))).thenReturn(city);
 
         // act
         CityDTO actualCity = cityService.updateCity(cityUpdateRequest, id);

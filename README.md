@@ -3,7 +3,7 @@
 ## BE ##
 
 Prerequisites
-JDK 1.8
+* JDK 17
 
 Running the application locally
 

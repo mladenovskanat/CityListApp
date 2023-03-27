@@ -22,7 +22,7 @@ export class CitiesComponent implements OnInit {
       name: new FormControl(null),
     })
     this.cityService.findCityByName(0).subscribe(data => {this.citiesFound = data.content
-      this.pages = Array.from({ length: data.totalPages }).map((currentElement, i) => i)
+      this.setPages(data.totalPages)
     })
   }
 
@@ -32,6 +32,7 @@ export class CitiesComponent implements OnInit {
   filter(page?:number) {
     this.cityService.findCityByName(page?page:0, this.city.get("name")?.value).subscribe(data => {
       this.citiesFound = data.content
+      this.setPages(data.totalPages)
     },() => {
       this.error = true
     })
@@ -39,5 +40,9 @@ export class CitiesComponent implements OnInit {
 
   edit(id: number) {
     this.router.navigate(['cities/'+ id +'/edit'])
+  }
+
+  setPages(pages: number) {
+    this.pages = Array.from({length: pages}).map((currentElement, i) => i+1)
   }
 }

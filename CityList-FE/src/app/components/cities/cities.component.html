@@ -26,6 +26,6 @@
 </table>
 
 <div class="pagination">
-  <a *ngFor="let page of pages" (click) = "filter(page)">{{page}} </a>
+  <a *ngFor="let page of pages" (click) = "filter(page-1)">{{page}} </a>
 </div>
 <p *ngIf="error">No cities found</p>
